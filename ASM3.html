@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết Quả Xổ Số TP HCM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #444;
+            color: white;
+        }
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+        .input-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Kết quả Xổ số Hồ Chí Minh Thứ Hai 10-02-2025</h2>
+        <table>
+            <tr>
+                <th>Giải</th>
+                <th>Kết quả</th>
+            </tr>
+            <tr><td>Đặc biệt</td><td class="highlight">359722</td></tr>
+            <tr><td>Giải nhất</td><td>48670</td></tr>
+            <tr><td>Giải nhì</td><td>79155</td></tr>
+            <tr><td>Giải ba</td><td>03225, 49331</td></tr>
+            <tr><td>Giải tư</td><td>67816, 92462, 21942, 36097</td></tr>
+            <tr><td>Giải năm</td><td>01206, 90230, 22598</td></tr>
+            <tr><td>Giải sáu</td><td>7213</td></tr>
+            <tr><td>Giải bảy</td><td>2020, 0194, 8175</td></tr>
+            <tr><td>Giải tám</td><td>435, <span class="highlight">81</span></td></tr>
+        </table>
+        <div class="input-container">
+            <label for="ticket">Nhập số vé của bạn để dò:</label>
+            <input type="text" id="ticket" maxlength="6" placeholder="Nhập 6 số">
+            <button onclick="checkLottery()">Dò số</button>
+        </div>
+        <p id="result"></p>
+    </div>
+    <script>
+        function checkLottery() {
+            const winningNumbers = {
+                "Đặc biệt": "359722",
+                "Giải nhất": "48670",
+                "Giải nhì": "79155",
+                "Giải ba": ["03225", "49331"],
+                "Giải tư": ["67816", "92462", "21942", "36097"],
+                "Giải năm": ["01206", "90230", "22598"],
+                "Giải sáu": ["7213"],
+                "Giải bảy": ["2020", "0194", "8175"],
+                "Giải tám": ["435", "81"]
+            };
+            
+            const ticketNumber = document.getElementById("ticket").value;
+            const resultElement = document.getElementById("result");
+            
+            //if (ticketNumber.length !== 6) {
+              //  resultElement.textContent = "Vui lòng nhập đúng 6 số!";
+              //  resultElement.style.color = "red";
+              //  return;
+            //}
+            
+            for (const [prize, numbers] of Object.entries(winningNumbers)) {
+                if (Array.isArray(numbers)) {
+                    if (numbers.includes(ticketNumber)) {
+                        resultElement.textContent = `Chúc mừng! Bạn trúng ${prize}!`;
+                        resultElement.style.color = "green";
+                        return;
+                    }
+                } else {
+                    if (ticketNumber === numbers) {
+                        resultElement.textContent = `Chúc mừng! Bạn trúng ${prize}!`;
+                        resultElement.style.color = "green";
+                        return;
+                    }
+                }
+            }
+            
+            if (ticketNumber.substring(1) === winningNumbers["Đặc biệt"].substring(1)) {
+                resultElement.textContent = "Bạn trúng Giải An Ủi!";
+                resultElement.style.color = "blue";
+            } else {
+                resultElement.textContent = "Không trúng, chúc bạn may mắn lần sau!";
+                resultElement.style.color = "gray";
+            }
+        }
+    </script>
+</body>
+</html>

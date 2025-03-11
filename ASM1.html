@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhập Xuất CSV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Danh sách sinh viên</h2>
+    <input type="file" id="fileInput" accept=".csv">
+    <button onclick="exportCSV()">Xuất dữ liệu</button>
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>MSSV</th>
+                <th>Họ</th>
+                <th>Tên</th>
+                <th>Lớp</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const rows = e.target.result.split('\n');
+                const tableBody = document.querySelector('#dataTable tbody');
+                tableBody.innerHTML = '';
+                rows.slice(1).forEach(row => {
+                    const cols = row.split(',');
+                    if (cols.length >= 5) {
+                        const tr = document.createElement('tr');
+                        cols.forEach(col => {
+                            const td = document.createElement('td');
+                            td.textContent = col.trim();
+                            tr.appendChild(td);
+                        });
+                        tableBody.appendChild(tr);
+                    }
+                });
+            };
+            reader.readAsText(file);
+        });
+
+        function exportCSV() {
+            let csvContent = "STT,MSSV,Họ,Tên,Lớp\n";
+            document.querySelectorAll('#dataTable tbody tr').forEach(row => {
+                let rowData = [];
+                row.querySelectorAll('td').forEach(cell => {
+                    rowData.push(cell.textContent);
+                });
+                csvContent += rowData.join(',') + "\n";
+            });
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'data_sv.csv';
+            link.click();
+        }
+    </script>
+</body>
+</html>

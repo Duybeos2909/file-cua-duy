@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đề Thi Xây Dựng Trang Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        /* Bài 1: Thiết kế bảng giống đề bài */
+        .table-container {
+            display: inline-block;
+            padding: 10px;
+            border: 4px solid black;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 3px solid black;
+        }
+        th, td {
+            border: 3px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: white;
+            font-weight: bold;
+        }
+        
+        /* Bài 2: Thiết kế menu ngang */
+        .menu {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            background-color: blue;
+            margin: 20px 0;
+        }
+        .menu li {
+            padding: 15px 30px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .menu li:hover {
+            background-color: red;
+        }
+        .menu li:last-child {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Bài 3: Thiết kế form */
+        .form-container {
+            width: 90%;
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 30px;
+            border: 3px solid black;
+            background-color: #f9f9f9;
+            text-align: left;
+        }
+        .form-container label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .form-container input, .form-container select, .form-container textarea, .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        .form-container select {
+            background-color: white;
+        }
+        .form-container textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .form-container button {
+            background-color: blue;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .form-container button:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Bài 1: Giá vàng thế giới</h2>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th rowspan="2">Sản phẩm</th>
+                <th colspan="2">Giá</th>
+            </tr>
+            <tr>
+                <th>Giá mua</th>
+                <th>Giá bán</th>
+            </tr>
+            <tr>
+                <td>Vàng SJC</td>
+                <td>36.910</td>
+                <td>36.980</td>
+            </tr>
+            <tr>
+                <td rowspan="3">Vàng nữ trang</td>
+                <td>24K</td>
+                <td>36.380</td>
+                <td>36.980</td>
+            </tr>
+            <tr>
+                <td>18K</td>
+                <td>26.890</td>
+                <td>27.890</td>
+            </tr>
+            <tr>
+                <td>14K</td>
+                <td>20.710</td>
+                <td>21.710</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Bài 2: Menu Ngang</h2>
+    <ul class="menu">
+        <li>Chính trị-Xã hội</li>
+        <li>Thế Giới</li>
+        <li>Nhịp sống trẻ</li>
+        <li>Giáo dục</li>
+        <li>Kinh tế</li>
+    </ul>
+    
+    <h2>Bài 3: Form Nhập Liệu</h2>
+    <div class="form-container">
+        <label for="name">Họ và tên:</label>
+        <input type="text" id="name" placeholder="Nhập họ và tên">
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Nhập email">
+        
+        <label for="phone">Số điện thoại:</label>
+        <input type="tel" id="phone" placeholder="Nhập số điện thoại">
+        
+        <label for="gender">Giới tính:</label>
+        <select id="gender">
+            <option value="">-- Chọn giới tính --</option>
+            <option value="male">Nam</option>
+            <option value="female">Nữ</option>
+            <option value="other">Khác</option>
+        </select>
+        
+        <label for="message">Nội dung:</label>
+        <textarea id="message" placeholder="Nhập nội dung"></textarea>
+        
+        <button type="submit">Gửi</button>
+    </div>
+</body>
+</html>

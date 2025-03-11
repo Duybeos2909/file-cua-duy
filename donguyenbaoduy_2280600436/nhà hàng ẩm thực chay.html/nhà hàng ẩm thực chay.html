@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhà hàng ẩm thực chay DK</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header-top {
+            background-color: #c2a231;
+            color: white;
+            padding: 10px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-top .left, .header-top .right {
+            display: flex;
+            align-items: center;
+        }
+        .header-top img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .header-top a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .navbar {
+            background-color: #222;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .logo img {
+            height: 50px;
+        }
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+        .menu li {
+            margin-right: 30px;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+        }
+        .search-bar input {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+        }
+        .search-bar button {
+            padding: 8px;
+            background-color: #c2a231;
+            border: none;
+            border-radius: 5px;
+            color: white;
+        }
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+        }
+        .slides {
+            display: none;
+        }
+        .slides img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .fade {
+            animation: fadeEffect 1.5s ease-in-out;
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0.4}
+            to {opacity: 1}
+        }
+        .story-section {
+            background-color: #f4f4f4;
+            padding: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .story-image {
+            width: 45%;
+        }
+        .story-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .story-content {
+            width: 50%;
+            text-align: left;
+        }
+        .story-content h2 {
+            font-size: 2.5em;
+            color: #c2a231;
+            margin-bottom: 20px;
+        }
+        .story-content p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-top">
+        <div class="left">
+            <img src="uk-flag.png" alt="English">
+            <img src="vn-flag.png" alt="Vietnamese">
+            <span>Hotline: 0798227676</span>
+        </div>
+        <div class="right">
+            <a href="#">Email: booking@amthucchaydk.com</a>
+            <a href="#">Câu chuyện chay DK</a>
+        </div>
+    </div>
+    <div class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Nhà hàng ẩm thực chay DK">
+        </div>
+        <ul class="menu">
+            <li><a href="#">Trang Chủ</a></li>
+            <li><a href="#">Đặt Món</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Mang Chay DK Về Nhà</a></li>
+            <li><a href="#">Ưu Đãi</a></li>
+            <li><a href="#">Sự Kiện</a></li>
+            <li><a href="#">Tin Tức</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm sản phẩm ...">
+            <button>Tìm</button>
+        </div>
+    </div>
+    <div class="slideshow-container">
+        <div class="slides fade">
+            <img src="slide1.png" alt="Slide 1">
+        </div>
+        <div class="slides fade">
+            <img src="slide2.png" alt="Slide 2">
+        </div>
+        <div class="slides fade">
+            <img src="slide3.png" alt="Slide 3">
+        </div>
+    </div>
+
+    <div class="story-section">
+        <div class="story-image">
+            <img src="restaurant-image.png" alt="Nhà hàng ẩm thực chay DK">
+        </div>
+        <div class="story-content">
+            <h2>Câu chuyện về Nhà hàng ẩm thực chay DK</h2>
+            <p>
+                Nhà hàng chay DK là điểm đến lý tưởng cho những ai yêu thích ẩm thực chay tinh tế và bổ dưỡng. Với sứ mệnh mang đến những món ăn ngon miệng từ nguyên liệu tươi sạch, nhà hàng không chỉ chú trọng vào hương vị mà còn vào sự trình bày đẹp mắt, tạo nên trải nghiệm ẩm thực đáng nhớ cho thực khách. Được thành lập vào năm 2010, nhà hàng chay DK đã nhanh chóng trở thành một trong những địa điểm ẩm thực chay nổi bật tại thành phố. Với đội ngũ đầu bếp giàu kinh nghiệm, nhà hàng cam kết sử dụng nguyên liệu hữu cơ và tươi ngon nhất để chế biến các món ăn. 
+
+                - **Chất lượng và Đổi mới**: Nhà hàng luôn tìm kiếm những công thức mới và sáng tạo, kết hợp giữa ẩm thực truyền thống và hiện đại, nhằm mang đến cho thực khách những trải nghiệm mới lạ.
+                
+                - **Không gian ấm cúng**: Nhà hàng DK được thiết kế với không gian thân thiện, ấm cúng, phù hợp cho cả gia đình và các buổi gặp gỡ bạn bè. 
+                
+                - **Dịch vụ tận tâm**: Đội ngũ nhân viên phục vụ chuyên nghiệp, nhiệt tình, luôn sẵn sàng tư vấn và phục vụ khách hàng một cách tốt nhất.
+                
+                Hãy đến với nhà hàng chay DK để khám phá những món ăn chay độc đáo và tận hưởng không gian thư giãn tuyệt vời!
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+    </script>
+</body>
+</html>

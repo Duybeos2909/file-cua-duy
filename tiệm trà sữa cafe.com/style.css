@@ -1,0 +1,160 @@
+/* Reset và font đẹp mắt */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #0B4F4F;
+    color: white;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    color: white;
+    margin-left: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Banner chính */
+.banner {
+    background-color: #0B4F4F;
+    padding: 150px 10%;
+    text-align: center;
+    color: white;
+}
+
+.banner h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.banner .products {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.banner .product-card {
+    background-color: white;
+    color: #0B4F4F;
+    padding: 20px;
+    border-radius: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.banner .product-card p {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* Check-in section */
+.check-in {
+    padding: 80px 10%;
+    background-color: #F5F5F5;
+    text-align: center;
+}
+
+.check-in h2 {
+    font-size: 2.5rem;
+    color: #0B4F4F;
+    margin-bottom: 40px;
+}
+
+.check-in .check-in-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.check-in img {
+    width: 250px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Menu */
+.menu {
+    padding: 80px 10%;
+    background-color: white;
+    text-align: center;
+}
+
+.menu h2 {
+    font-size: 2.5rem;
+    color: #0B4F4F;
+    margin-bottom: 50px;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.menu-item {
+    background-color: #FF7F11;
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.menu-item p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #0B4F4F;
+    color: white;
+    padding: 50px 10%;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+footer .footer-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+footer .footer-links a:hover {
+    text-decoration: underline;
+}

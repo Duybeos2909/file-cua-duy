@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Chi Tiết Sản Phẩm</h1>
+    </header>
+
+    <div class="product-detail">
+        <img src="https://picsum.photos/id/684/600/400"alt="">
+        <h2 class="product-name"></h2>
+        <p class="product-desc"></p>
+        <p class="product-price"></p>
+        <button class="button button4">Mua Ngay</button>
+    </div>
+
+    <a href="Index1.html" class="back-button">← Quay lại danh sách sản phẩm</a>
+
+    <script>
+        // Lấy ID sản phẩm từ URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        // Dữ liệu sản phẩm giả lập
+        const products = {
+            "1": { name: "Sản Phẩm 1", desc: "Mô tả sản phẩm 1.", price: "$100", img: "https://picsum.photos/id/684/600/400" },
+            "2": { name: "Sản Phẩm 2", desc: "Mô tả sản phẩm 2.", price: "$150", img: "https://picsum.photos/id/1025/600/400" },
+            "3": { name: "Sản Phẩm 3", desc: "Mô tả sản phẩm 3.", price: "$120", img: "https://picsum.photos/id/1060/600/400" }
+        };
+
+        // Cập nhật thông tin sản phẩm trên trang
+        if (products[productId]) {
+            document.getElementById("product-img").src = products[productId].img;
+            document.getElementById("product-name").textContent = products[productId].name;
+            document.getElementById("product-desc").textContent = products[productId].desc;
+            document.getElementById("product-price").textContent = "Giá: " + products[productId].price;
+        } else {
+            document.body.innerHTML = "<h2>Sản phẩm không tồn tại!</h2><a href='index.html'>Quay lại</a>";
+        }
+    </script>
+</body>
+</html>
